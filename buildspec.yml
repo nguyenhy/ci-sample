@@ -37,8 +37,9 @@ phases:
     commands:
       - echo post_build
       - echo `pwd`
-      - echo `ls -la frontend`
-      - echo `ls -la frontend/public`
-      - echo `ls -la backend`
-      - echo `ls -la backend/public`
+      - mkdir backend/public
+      - echo `ls -a frontend`
+      - echo `ls -a frontend/public`
+      - echo `ls -a backend`
+      - echo `ls -a backend/public`
       - cp -v frontend/public/index.js backend/public/index.js
