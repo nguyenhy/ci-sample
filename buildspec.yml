@@ -15,15 +15,23 @@ phases:
     commands:
       - echo pre_build npm
       - echo `pwd`
+      - echo `ls -a`
       - cd frontend
       - npm install
+      - npm run build
+
       - echo pre_build composer
+      - cd ../backend
       - echo `pwd`
+      - echo `ls -a`
+      - composer install --no-progress --no-suggest
 
   build:
     commands:
       - echo build
-      - npm run build 
+      - cd ../
+      - echo `pwd`
+      - echo `ls -a`
 
   post_build:
     commands:
