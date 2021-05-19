@@ -43,3 +43,7 @@ phases:
       - echo `ls -a backend`
       - echo `ls -a backend/public`
       - cp -v frontend/public/index.js backend/public/index.js
+
+artifacts:
+  files:
+    - backend/**/*
