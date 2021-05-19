@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "npx mix"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.19"
+  }
+}
