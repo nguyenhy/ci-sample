@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.3
+    commands:
+      - echo install
+      - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+      - php composer-setup.php ;
+      - php -r "unlink('composer-setup.php');" ;
+      - mv composer.phar /usr/local/bin/composer
+      - ./scripts/buildspec/install.sh
+
+  pre_build:
+    commands:
+      - echo pre_build
+      - ./scripts/buildspec/pre_build.sh
+
+  build:
+    commands:
+      - echo build
+      - ./scripts/buildspec/build.sh
+
+  post_build:
+    commands:
+      - echo post_build
+      - mv ./frontend/public/index.js ./backend/public/index.js
+      - ./scripts/buildspec/post_build.sh

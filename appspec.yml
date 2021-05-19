@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/ci
+hooks:
+  BeforeInstall:
+    - location: scripts/appspec/before_install.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: scripts/appspec/after_install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/appspec/application_start.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/appspec/application_stop.sh
+      timeout: 300
+      runas: root
