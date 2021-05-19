@@ -36,4 +36,9 @@ phases:
   post_build:
     commands:
       - echo post_build
-      - mv frontend/public/index.js backend/public/index.js
+      - echo `pwd`
+      - echo `ls -la frontend`
+      - echo `ls -la frontend/public`
+      - echo `ls -la backend`
+      - echo `ls -la backend/public`
+      - cp -v frontend/public/index.js backend/public/index.js
